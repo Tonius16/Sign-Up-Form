@@ -22,38 +22,135 @@ ul {
   margin: 0;
   padding: 0;
   font-weight: normal;
+}
+
+@font-face {
+  font-family: neonFont;
+  src: url(./font/Vibur-Regular.ttf);
+}
+
+body {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+}
+
+#signDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 10vw;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  top: 40%;
+  left: 49%;
+  transform: translate(-40%, -60%);
+  border: 3px rgb(40, 173, 7) solid;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  animation: flickerBorder 1.5s infinite alternate;
+}
+
+#signRef {
+  display: flex;
+  justify-content: space-between;
+  width: 10vw;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  top: 75%;
+  left: 39%;
+  transform: translate(-40%, -60%);
+  border: 3px rgb(40, 173, 7) solid;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  animation: flickerBorder 1.5s infinite alternate;
+  opacity: 40%;
+  transform: scaleY(-1);
+}
+
+.imgDiv p {
+  font-family: neonFont;
+  font-size: 1.5vw;
+  color: rgb(0, 0, 0);
+  animation: flicker 2.5s infinite alternate;
+}
+
+#brainIcon {
+  width: 3vw;
+  height: auto;
+  animation: flickerBrain 2.5s infinite alternate;
+}
+
+@keyframes flickerBorder {
+  0% {
+    box-shadow: 0 0 7px rgb(13, 85, 13), 0 0 10px rgb(13, 94, 13),
+      0 0 21px rgb(51, 143, 9), 0 0 42px rgb(8, 105, 8);
+  }
+
+  100% {
+    box-shadow: 0 0 7px rgba(13, 85, 13, 0.233),
+      0 0 10px rgba(13, 94, 13, 0.308), 0 0 21px rgba(51, 143, 9, 0.432),
+      0 0 42px rgba(8, 105, 8, 0.452);
+  }
+}
+
+@keyframes flickerBrain {
+  0% {
+    box-shadow: 0 0 7px rgb(46, 129, 46), 0 0 10px rgb(4, 141, 4),
+      0 0 21px rgb(51, 143, 9), 0 0 42px rgb(7, 165, 7),
+      0 0 82px rgb(32, 221, 8), 0 0 92px rgb(55, 126, 22), 0 0 102px #0fa;
+    background-color: rgb(35, 133, 27);
+    border-radius: 5em;
+  }
+
+  100% {
+    box-shadow: 0 0 7px rgba(46, 129, 46, 0.603),
+      0 0 10px rgba(4, 141, 4, 0.267), 0 0 21px rgba(51, 143, 9, 0.37),
+      0 0 42px rgba(7, 165, 7, 0.445), 0 0 82px rgb(32, 221, 8),
+      0 0 92px rgb(55, 126, 22), 0 0 102px #0fa;
+    background-color: rgba(41, 209, 19, 0.527);
+    border-radius: 5em;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    text-shadow: 0 0 7px green, 0 0 10px rgb(4, 141, 4),
+      0 0 21px rgb(81, 241, 7), 0 0 42px rgb(11, 221, 151),
+      0 0 82px rgb(32, 221, 8), 0 0 92px rgb(80, 241, 5), 0 0 102px #0fa,
+      0 0 151px rgb(7, 240, 38);
+  }
+
+  100% {
+    text-shadow: 0 0 7px rgba(0, 128, 0, 0.534), 0 0 10px rgba(4, 141, 4, 0.377),
+      0 0 21px rgba(81, 241, 7, 0.404), 0 0 42px rgba(11, 221, 29, 0.548),
+      0 0 82px rgba(33, 221, 8, 0.274), 0 0 92px rgba(80, 241, 5, 0.205),
+      0 0 102px #0fa, 0 0 151px rgba(7, 240, 38, 0.336);
+  }
 }
 
 .imgDiv {
-  max-width: 40%;
-  max-height: auto;
+  position: relative;
+  width: 40%;
+  max-height: 100vh;
 }
 
-img {
-  max-width: 100%;
-  max-height: auto;
-  border-right: black solid;
-  border-bottom: none;
+.imgDiv img {
+  width: 100%;
+  max-height: 100vh;
 }
 
 .formDiv {
   width: 60%;
-  max-height: auto;
+  max-height: 100vh;
   background-color: aqua;
 }
 
-#form {
-  margin-top: 300px;
-  max-width: 100%;
-  max-height: auto;
-}
-
 fieldset {
-  max-width: 100%;
+  max-width: auto;
   max-height: auto;
-  margin-left: 10px;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
   gap: 3em;
@@ -63,6 +160,7 @@ fieldset > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 fieldset > div > div {
