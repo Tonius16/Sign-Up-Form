@@ -36,6 +36,7 @@
                 class="input"
                 type="text"
                 maxlength="25"
+                required
               />
             </div>
             <div>
@@ -52,7 +53,13 @@
           <div>
             <div>
               <label for="e-mail">E-MAIL</label>
-              <input name="e-mail" id="e-mail" class="input" type="email" />
+              <input
+                name="e-mail"
+                id="e-mail"
+                class="input"
+                type="email"
+                required
+              />
             </div>
             <div>
               <label for="telNum">PHONE NUMBER</label>
@@ -60,13 +67,15 @@
             </div>
           </div>
           <div>
-            <div>
+            <div id="passDiv">
               <label for="password">PASSWORD</label>
               <input
                 name="password"
                 id="password"
-                class="input"
+                class="error"
                 type="password"
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                required
               />
             </div>
             <div>
@@ -74,8 +83,9 @@
               <input
                 name="confPassword"
                 id="confPassword"
-                class="input"
+                class="error"
                 type="password"
+                required
               />
             </div>
           </div>
