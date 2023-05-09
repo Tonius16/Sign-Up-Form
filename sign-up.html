@@ -25,68 +25,93 @@
         This is not a real online service!<br />We know you want the best when
         it comes to your future tech solutions.
       </p>
+      <p class="formTxtUnder">
+        Sign up now to recieve all the relevant updates
+      </p>
       <form id="form" action="" method="get">
         <fieldset>
           <div>
             <div>
-              <label for="name">FIRST NAME</label>
+              <label for="name">FIRST NAME*</label>
               <input
                 name="name"
                 id="name"
-                class="input"
+                class="inputClass"
                 type="text"
                 maxlength="25"
+                placeholder="John"
                 required
               />
+              <span id="nameSpan"></span>
+              <p></p>
             </div>
             <div>
               <label for="lastName">LAST NAME</label>
               <input
                 name="lastName"
                 id="lastName"
-                class="input"
+                class="inputClass"
                 type="text"
                 maxlength="25"
+                placeholder="Doe"
               />
+              <span id="lastNameSpan"></span>
+              <p></p>
             </div>
           </div>
           <div>
             <div>
-              <label for="e-mail">E-MAIL</label>
+              <label for="e-mail">E-MAIL*</label>
               <input
                 name="e-mail"
                 id="e-mail"
-                class="input"
+                class="inputClass"
                 type="email"
+                placeholder="john.doe@email.com"
                 required
               />
+              <span id="e-mailSpan"></span>
+              <p></p>
             </div>
             <div>
-              <label for="telNum">PHONE NUMBER</label>
-              <input name="telNum" id="telNum" class="input" type="tel" />
+              <label for="telNum">MOBILE NUMBER</label>
+              <input
+                name="telNum"
+                id="telNum"
+                class="inputClass"
+                type="tel"
+                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                placeholder="+385917788755"
+              />
+              <span id="telNumSpan"></span>
+              <p></p>
             </div>
           </div>
           <div>
             <div id="passDiv">
-              <label for="password">PASSWORD</label>
+              <label for="password">PASSWORD*</label>
               <input
                 name="password"
                 id="password"
-                class="error"
+                class="inputClass"
                 type="password"
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
                 required
               />
+              <span id="passSpan"></span>
+              <p id="passText"></p>
             </div>
             <div id="confPassDiv">
-              <label for="confPassword">CONFIRM PASSWORD</label>
+              <label for="confPassword">CONFIRM PASSWORD*</label>
               <input
                 name="confPassword"
                 id="confPassword"
-                class="error"
+                class="inputClass"
                 type="password"
                 required
               />
+              <span id="confPassSpan"></span>
+              <p id="confPassText"></p>
             </div>
           </div>
         </fieldset>

@@ -40,6 +40,16 @@ ul {
   src: url(./font/Vibur-Regular.ttf);
 }
 
+@font-face {
+  font-family: neonFont2;
+  src: url(./font/fontTwo/NeonBines.ttf);
+}
+
+@font-face {
+  font-family: neonFont3;
+  src: url(./font/fontThree/KosanNonCommercial.otf);
+}
+
 body {
   display: flex;
   flex-direction: row;
@@ -107,10 +117,10 @@ img {
 .formDiv {
   display: flex;
   flex-direction: column;
-  gap: 15em;
+  gap: 8vh;
   width: 60%;
   max-height: 100vh;
-  padding-top: 6em;
+  padding-top: 6vh;
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
     0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
   background: linear-gradient(
@@ -123,8 +133,22 @@ img {
 }
 
 .formTxt {
-  font-size: clamp(1em, 2.5vw, 2em);
+  font-size: clamp(1em, 2.5vw, 2.2em);
   text-align: center;
+  font-family: neonFont3;
+  color: #92098b;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  line-height: 7vh;
+}
+
+.formTxtUnder {
+  font-size: clamp(0.8em, 2.5vw, 1.2em);
+  font-family: neonFont3;
+  color: #750670;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  line-height: 7vh;
+  margin-bottom: -4vh;
+  margin-left: 1.6em;
 }
 
 form {
@@ -144,6 +168,7 @@ fieldset {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
   gap: 2.5em;
   background-color: rgba(101, 54, 110, 0.336);
   box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
@@ -163,7 +188,12 @@ fieldset > div > div {
   flex-direction: column;
   flex-wrap: wrap;
   font-size: clamp(0.5em, 2.5vw, 1em);
-  gap: 2px;
+  font-weight: bold;
+  position: relative;
+  color: #0e33d8;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  font-family: neonFont3;
+  gap: 1.1vh;
 }
 
 fieldset > div > div > input {
@@ -174,35 +204,55 @@ fieldset > div > div > input {
   background-color: #cfcedfaf;
 }
 
+fieldset > div > div > span {
+  position: absolute;
+  top: 45%;
+  left: 92%;
+  transform: translate(-40%, -60%);
+  display: none;
+}
+
+fieldset > div > div > span::after {
+  position: absolute;
+  content: "✔️";
+}
+
 form > button {
-  margin-top: 2vw;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
-    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
-  border-radius: 10px;
   width: 10vw;
   height: 5vh;
+  font-weight: bold;
+  margin-top: 2vw;
+  font-size: clamp(0.5em, 2.5vw, 1em);
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 2.5rem #bc13fe;
+  border-radius: 10px;
+  color: #0e33d8;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  font-family: neonFont3;
 }
 
-fieldset > div > div > input:focus {
-  animation: inputAnimations 2s alternate infinite;
+button:active {
+  border-style: outset;
 }
 
-#passDiv > p {
-  font-size: clamp(0.3em, 3vw, 0.9em);
+fieldset > div > div > input:focus:invalid {
+  animation: inputAnimationsInvalid 2s alternate infinite;
 }
 
-#confPassDiv > p {
-  font-size: clamp(0.3em, 3vw, 0.9em);
+fieldset > div > div > input:focus:valid {
+  animation: inputAnimationsValid 2s alternate infinite;
 }
 
-.error:invalid:focus {
+#passText {
+  width: auto;
+  height: 0.5vh;
+  font-size: clamp(0.3em, 3vw, 1em);
 }
 
-.error:valid:focus {
-  border: #24e613 solid;
-}
-
-.regExText {
+#confPassText {
+  width: auto;
+  height: 0.5vh;
+  font-size: clamp(0.3em, 3vw, 1em);
 }
 
 @keyframes flickerBorder {
@@ -253,7 +303,7 @@ fieldset > div > div > input:focus {
   }
 }
 
-@keyframes inputAnimations {
+@keyframes inputAnimationsInvalid {
   0% {
     box-shadow: 0 0 0.01rem #fff, 0 0 0.01rem #fff, 0 0 0.5rem #bb13fe52,
       0 0 0.2rem #bb13fe54, 0 0 0.5rem #bc13fe, inset 0 0 0.1rem #bc13fe;
@@ -262,6 +312,18 @@ fieldset > div > div > input:focus {
   100% {
     box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 1rem #bc13fe,
       0 0 0.4rem #bc13fe, 0 0 1.4rem #bc13fe, inset 0 0 0.5rem #bc13fe;
+  }
+}
+
+@keyframes inputAnimationsValid {
+  0% {
+    box-shadow: 0 0 0.01rem #fff, 0 0 0.01rem #fff, 0 0 0.5rem #55c70a52,
+      0 0 0.2rem #4fd80f54, 0 0 0.5rem #4cdf12, inset 0 0 0.1rem #05df10;
+  }
+
+  100% {
+    box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 1rem #44e006,
+      0 0 0.4rem #3de909, 0 0 1.4rem #43df06, inset 0 0 0.5rem #41f30b;
   }
 }
 
