@@ -11,14 +11,18 @@
   <body>
     <div class="imgDiv" id="imgDiv">
       <div id="signDiv">
-        <img src="./imgs/4431830.png" id="brainIcon" />
+        <img src="./imgs/4431830.png" id="brainIcon" draggable="false" />
         <p class="signTxt">Step into <br />the future</p>
       </div>
       <div id="signRef">
-        <img src="./imgs/4431830.png" id="brainIcon" />
+        <img src="./imgs/4431830.png" id="brainIcon" draggable="false" />
         <p class="signTxt">Step into <br />the future</p>
       </div>
-      <img src="./imgs/efe-kurnaz-RnCPiXixooY-unsplash.jpg" id="hallImg" />
+      <img
+        src="./imgs/efe-kurnaz-RnCPiXixooY-unsplash.jpg"
+        id="hallImg"
+        draggable="false"
+      />
     </div>
     <div class="formDiv" id="formDiv">
       <p class="formTxt">
@@ -32,7 +36,7 @@
         <fieldset>
           <div>
             <div>
-              <label for="name">FIRST NAME*</label>
+              <label for="name">FIRST NAME <span>*</span></label>
               <input
                 name="name"
                 id="name"
@@ -61,7 +65,7 @@
           </div>
           <div>
             <div>
-              <label for="e-mail">E-MAIL*</label>
+              <label for="e-mail">E-MAIL <span>*</span></label>
               <input
                 name="e-mail"
                 id="e-mail"
@@ -89,7 +93,7 @@
           </div>
           <div>
             <div id="passDiv">
-              <label for="password">PASSWORD*</label>
+              <label for="password">PASSWORD <span>*</span></label>
               <input
                 name="password"
                 id="password"
@@ -102,7 +106,7 @@
               <p id="passText"></p>
             </div>
             <div id="confPassDiv">
-              <label for="confPassword">CONFIRM PASSWORD*</label>
+              <label for="confPassword">CONFIRM PASSWORD <span>*</span></label>
               <input
                 name="confPassword"
                 id="confPassword"
@@ -115,7 +119,10 @@
             </div>
           </div>
         </fieldset>
-        <button type="submit">SIGN UP</button>
+        <div id="buttonDiv">
+          <button type="submit">SIGN UP</button>
+          <p>Already have an account? <a href="">Log In</a></p>
+        </div>
       </form>
     </div>
   </body>

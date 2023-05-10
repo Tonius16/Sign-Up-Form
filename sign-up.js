@@ -3,6 +3,7 @@ const passConfInp = document.getElementById("confPassword");
 const passDiv = document.getElementById("passDiv");
 const confPassDiv = document.getElementById("confPassDiv");
 const body = document.querySelector("body");
+const imgDiv = document.getElementById("imgDiv");
 const passText = document.getElementById("passText");
 const confPassText = document.getElementById("confPassText");
 const nameInp = document.getElementById("name");
