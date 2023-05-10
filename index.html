@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sign-up.css" />
+    <script src="sign-up.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="imgDiv" id="imgDiv">
+      <div id="signDiv">
+        <img src="./imgs/4431830.png" id="brainIcon" draggable="false" />
+        <p class="signTxt">Step into <br />the future</p>
+      </div>
+      <div id="signRef">
+        <img src="./imgs/4431830.png" id="brainIcon" draggable="false" />
+        <p class="signTxt">Step into <br />the future</p>
+      </div>
+      <img
+        src="./imgs/efe-kurnaz-RnCPiXixooY-unsplash.jpg"
+        id="hallImg"
+        draggable="false"
+      />
+    </div>
+    <div class="formDiv" id="formDiv">
+      <p class="formTxt">
+        This is not a real online service!<br />We know you want the best when
+        it comes to your future tech solutions.
+      </p>
+      <p class="formTxtUnder">
+        Sign up now to recieve all the relevant updates
+      </p>
+      <form id="form" action="" method="get">
+        <fieldset>
+          <div>
+            <div>
+              <label for="name">FIRST NAME <span>*</span></label>
+              <input
+                name="name"
+                id="name"
+                class="inputClass"
+                type="text"
+                maxlength="25"
+                placeholder="John"
+                required
+              />
+              <span id="nameSpan"></span>
+              <p></p>
+            </div>
+            <div>
+              <label for="lastName">LAST NAME</label>
+              <input
+                name="lastName"
+                id="lastName"
+                class="inputClass"
+                type="text"
+                maxlength="25"
+                placeholder="Doe"
+              />
+              <span id="lastNameSpan"></span>
+              <p></p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="e-mail">E-MAIL <span>*</span></label>
+              <input
+                name="e-mail"
+                id="e-mail"
+                class="inputClass"
+                type="email"
+                placeholder="john.doe@email.com"
+                required
+              />
+              <span id="e-mailSpan"></span>
+              <p></p>
+            </div>
+            <div>
+              <label for="telNum">MOBILE NUMBER</label>
+              <input
+                name="telNum"
+                id="telNum"
+                class="inputClass"
+                type="tel"
+                pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                placeholder="+385917788755"
+              />
+              <span id="telNumSpan"></span>
+              <p></p>
+            </div>
+          </div>
+          <div>
+            <div id="passDiv">
+              <label for="password">PASSWORD <span>*</span></label>
+              <input
+                name="password"
+                id="password"
+                class="inputClass"
+                type="password"
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                required
+              />
+              <span id="passSpan"></span>
+              <p id="passText"></p>
+            </div>
+            <div id="confPassDiv">
+              <label for="confPassword">CONFIRM PASSWORD <span>*</span></label>
+              <input
+                name="confPassword"
+                id="confPassword"
+                class="inputClass"
+                type="password"
+                required
+              />
+              <span id="confPassSpan"></span>
+              <p id="confPassText"></p>
+            </div>
+          </div>
+        </fieldset>
+        <div id="buttonDiv">
+          <button type="submit">SIGN UP</button>
+          <p>Already have an account? <a href="">Log In</a></p>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
